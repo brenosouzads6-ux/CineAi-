@@ -1,0 +1,230 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CineIA design system — cinema escuro, grafite quente + âmbar.
+ * Todas as cores em oklch e sempre via tokens semânticos.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-poster: 0 18px 40px -18px oklch(0 0 0 / 0.75);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.105 0.008 260);
+  --foreground: oklch(0.96 0.008 80);
+  --card: oklch(0.16 0.009 260);
+  --card-foreground: oklch(0.96 0.008 80);
+  --popover: oklch(0.19 0.016 62);
+  --popover-foreground: oklch(0.96 0.008 80);
+  --primary: oklch(0.62 0.24 27);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.21 0.009 260);
+  --secondary-foreground: oklch(0.95 0.008 80);
+  --muted: oklch(0.20 0.008 260);
+  --muted-foreground: oklch(0.74 0.016 78);
+  --accent: oklch(0.31 0.035 60);
+  --accent-foreground: oklch(0.95 0.01 80);
+  --destructive: oklch(0.6 0.2 22);
+  --destructive-foreground: oklch(0.97 0.01 80);
+  --border: oklch(0.25 0.008 260);
+  --input: oklch(0.3 0.018 62);
+  --ring: oklch(0.79 0.155 71);
+  --chart-1: oklch(0.79 0.155 71);
+  --chart-2: oklch(0.68 0.13 190);
+  --chart-3: oklch(0.7 0.16 25);
+  --chart-4: oklch(0.75 0.14 140);
+  --chart-5: oklch(0.66 0.16 320);
+  --sidebar: oklch(0.19 0.016 62);
+  --sidebar-foreground: oklch(0.95 0.008 80);
+  --sidebar-primary: oklch(0.79 0.155 71);
+  --sidebar-primary-foreground: oklch(0.19 0.03 62);
+  --sidebar-accent: oklch(0.27 0.018 62);
+  --sidebar-accent-foreground: oklch(0.95 0.008 80);
+  --sidebar-border: oklch(0.32 0.018 62);
+  --sidebar-ring: oklch(0.79 0.155 71);
+}
+
+.dark {
+  --background: oklch(0.16 0.014 62);
+  --foreground: oklch(0.96 0.008 80);
+  --card: oklch(0.21 0.016 62);
+  --card-foreground: oklch(0.96 0.008 80);
+  --popover: oklch(0.19 0.016 62);
+  --popover-foreground: oklch(0.96 0.008 80);
+  --primary: oklch(0.79 0.155 71);
+  --primary-foreground: oklch(0.19 0.03 62);
+  --secondary: oklch(0.27 0.018 62);
+  --secondary-foreground: oklch(0.95 0.008 80);
+  --muted: oklch(0.25 0.014 62);
+  --muted-foreground: oklch(0.74 0.016 78);
+  --accent: oklch(0.31 0.035 60);
+  --accent-foreground: oklch(0.95 0.01 80);
+  --destructive: oklch(0.6 0.2 22);
+  --destructive-foreground: oklch(0.97 0.01 80);
+  --border: oklch(0.32 0.018 62);
+  --input: oklch(0.3 0.018 62);
+  --ring: oklch(0.79 0.155 71);
+  --chart-1: oklch(0.79 0.155 71);
+  --chart-2: oklch(0.68 0.13 190);
+  --chart-3: oklch(0.7 0.16 25);
+  --chart-4: oklch(0.75 0.14 140);
+  --chart-5: oklch(0.66 0.16 320);
+  --sidebar: oklch(0.19 0.016 62);
+  --sidebar-foreground: oklch(0.95 0.008 80);
+  --sidebar-primary: oklch(0.79 0.155 71);
+  --sidebar-primary-foreground: oklch(0.19 0.03 62);
+  --sidebar-accent: oklch(0.27 0.018 62);
+  --sidebar-accent-foreground: oklch(0.95 0.008 80);
+  --sidebar-border: oklch(0.32 0.018 62);
+  --sidebar-ring: oklch(0.79 0.155 71);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility grain {
+  background-image:
+    radial-gradient(circle at 20% 0%, oklch(0.79 0.155 71 / 0.12), transparent 45%),
+    radial-gradient(circle at 85% 10%, oklch(0.66 0.16 320 / 0.1), transparent 40%);
+}
+
+
+/* CineAI streaming layout */
+.cine-app-shell { min-height: 100vh; }
+.cine-sidebar {
+  position: fixed; inset: 0 auto 0 0; z-index: 50; width: 248px;
+  display: flex; flex-direction: column; padding: 30px 20px 22px;
+  background: #090a0d; border-right: 1px solid rgba(255,255,255,.07);
+}
+.cine-brand {
+  display: block; margin: 0 0 52px 10px; color: #ed171d;
+  font-family: Georgia, serif; font-size: 39px; font-weight: 900;
+  font-style: italic; letter-spacing: 1px; line-height: 1;
+}
+.cine-brand span { color: #ed171d; }
+.sidebar-caption { margin: 0 0 13px 12px; color: #666a73; font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+.sidebar-nav { display: grid; gap: 8px; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 15px; min-height: 49px;
+  padding: 0 14px; border-radius: 11px; color: #a6a8b0;
+  font-size: 14px; font-weight: 650; transition: .2s ease;
+}
+.sidebar-link:hover { color: white; background: rgba(255,255,255,.06); }
+.sidebar-link.active { color: white; background: #24252b; box-shadow: inset 3px 0 #ed171d; }
+.sidebar-link.active svg { color: #ed171d; fill: rgba(237,23,29,.15); }
+.sidebar-bottom { margin-top: auto; display: grid; gap: 18px; }
+.sidebar-profile { display: flex; align-items: center; gap: 11px; padding: 14px 9px 0; border-top: 1px solid rgba(255,255,255,.08); color: #aaa; }
+.sidebar-profile strong,.sidebar-profile small { display: block; }
+.sidebar-profile strong { color: #eee; font-size: 12px; }
+.sidebar-profile small { margin-top: 3px; color: #777; font-size: 10px; }
+.cine-topbar {
+  position: sticky; top: 0; z-index: 40; height: 82px; margin-left: 248px;
+  display: flex; align-items: center; gap: 22px; padding: 0 38px;
+  background: rgba(9,10,13,.88); border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(18px);
+}
+.top-search { display: flex; align-items: center; gap: 12px; width: min(480px,55%); height: 44px; padding: 0 16px; border-radius: 999px; background: #17191f; color: #777; }
+.top-search input { width: 100%; outline: none; border: 0; background: transparent; color: #eee; font: inherit; font-size: 13px; }
+.top-search input::placeholder { color: #777; }
+.top-actions { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.icon-action { position: relative; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: #202229; color: #ddd; }
+.icon-action i { position: absolute; right: 9px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: #ed171d; }
+.profile-pill { display: flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border: 0; border-radius: 999px; background: #202229; color: #eee; text-align: left; }
+.profile-avatar { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #343741; }
+.profile-pill b,.profile-pill small { display: block; }
+.profile-pill b { font-size: 11px; }
+.profile-pill small { margin-top: 2px; color: #8e929d; font-size: 9px; }
+.mobile-brand { display: none; }
+.cine-main { margin-left: 248px; min-width: 0; }
+.cine-main > main { max-width: 1600px; padding: 24px 38px 70px; }
+.cine-main section[aria-label="Destaques"] { margin-top: 0; border: 0; border-radius: 18px; }
+.cine-main section[aria-label="Destaques"] > div { height: min(490px, 48vw); min-height: 360px; }
+.cine-main section[aria-label="Destaques"] img { object-position: center 30%; }
+.cine-main section[aria-label="Destaques"] .bg-gradient-to-t { background: linear-gradient(90deg,rgba(5,7,12,.96) 0%,rgba(5,7,12,.76) 42%,rgba(5,7,12,.08) 100%),linear-gradient(0deg,rgba(5,7,12,.65),transparent 55%); }
+.cine-main section[aria-label="Destaques"] h2 { max-width: 620px; font-size: clamp(30px,4vw,54px); text-transform: none; }
+.cine-main section[aria-label="Destaques"] .text-primary { color: #f04449; }
+.cine-main section[aria-label="Continuar assistindo"], .cine-main section:not([aria-label="Destaques"]) { margin-top: 34px; }
+.cine-main section h2 { font-size: 22px; text-transform: none; letter-spacing: 0; }
+.cine-main article { border-color: rgba(255,255,255,.08); background: #15171c; }
+.cine-main article h3 { font-size: 14px; }
+.cine-main article p { line-height: 1.45; }
+@media (max-width: 800px) {
+  .cine-sidebar { display: none; }
+  .cine-topbar { height: 66px; margin-left: 0; padding: 0 15px; gap: 12px; }
+  .mobile-brand { display: block; flex: 0 0 auto; font-family: Georgia,serif; font-size: 22px; font-weight: 900; font-style: italic; color: #ed171d; }
+  .mobile-brand a { color: inherit; }
+  .mobile-brand span { color: #fff; }
+  .top-search { width: auto; flex: 1; height: 39px; padding: 0 11px; }
+  .top-search input { min-width: 0; font-size: 11px; }
+  .top-actions { gap: 7px; margin-left: 0; }
+  .profile-pill { display: none; }
+  .cine-main { margin-left: 0; }
+  .cine-main > main { padding: 16px 15px 90px; }
+  .cine-main section[aria-label="Destaques"] > div { height: 420px; min-height: 390px; }
+  .cine-main section[aria-label="Destaques"] .bg-gradient-to-t { background: linear-gradient(0deg,rgba(5,7,12,.98),rgba(5,7,12,.45) 70%,rgba(5,7,12,.12)); }
+  .cine-main section[aria-label="Destaques"] h2 { font-size: 34px; }
+}
